@@ -32,10 +32,12 @@ const user: IUser = {
 // console.log(user);
 
 
-const person:Record<string, string> = {
+const person:Record<string, string | number | boolean> = {
   user: "person",
 }
 person["address"] = "address"
+person["age"] = 12
+person["isMarried"] = true
 
 
 console.log(person);
