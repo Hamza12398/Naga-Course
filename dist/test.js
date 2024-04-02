@@ -19,6 +19,8 @@ const user = {
     age: 30,
 };
 console.log(updateData(user, { username: "cherkaoui" }));
-
-
-
+const cities = {
+    "Istanbul": "Istanbul",
+    "Ankara": "Ankara",
+    "Bursa": "Bursa",
+};
