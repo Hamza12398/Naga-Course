@@ -1,49 +1,65 @@
 "use strict";
-//* VAR (Current execution context)
-//* LET (BLOCK SCOPE)
-//* CONST (BLOCK SCOPE)
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var username;
-username = "hamza";
-// console.log(username);
-var isLogging = true;
-function getUsername() {
-    if (isLogging) {
-        var user = "hamza";
-    }
-    // console.log(user);
-}
-getUsername();
-const x = true;
-const y = false;
-const z = true;
-console.log(x && y && z);
-// if (x || y) {
-//   console.log("true");
-// } else {
-//   console.log("false");
+// ///* VAR (Current execution context)
+// //* LET (BLOCK SCOPE)
+// //* CONST (BLOCK SCOPE)
+// var username;
+// username = "hamza";
+// // console.log(username);
+// var isLogging = true;
+// function getUsername() {
+//   if (isLogging) {
+//     var user = "hamza";
+//   }
+//   // console.log(user);
 // }
-const data1 = {
-    name: "Hamza",
-    age: 30,
-    eat: function () {
-        console.log("Eating");
-    }
-};
-const { eat } = data1, restData = __rest(data1, ["eat"]);
-const data2 = Object.assign({}, data1);
-console.log(data2);
-const numbers = [1, 2, 3, 4, 5, 10, 14, -2];
-const some = numbers.some((num) => {
-    return num < 0;
+// getUsername();
+// const x: boolean = true;
+// const y: boolean = false;
+// const z: boolean = true;
+// // console.log(x && y && z);
+// // if (x || y) {
+// //   console.log("true");
+// // } else {
+// //   console.log("false");
+// // }
+// const data1 = {
+//   name: "Hamza",
+//   age: 30,
+//   eat: function() {
+//     console.log("Eating");
+//   }
+// };
+// const {eat, ...restData} = data1
+// const data2 = {...data1}
+// // console.log(data2);
+// const numbers: number[] = [1, 2, 3, 4, 5, 6, 7];
+// const filter = numbers.filter((n) => n % 2 === 0);
+// console.log(filter);
+// // const some = numbers.some((num) => {
+//   //   return num < 0;
+//   // })
+//   // const reduce = numbers.reduce((acc, num) => {
+//     //   return acc + num + 5;
+//     // })
+// const map = numbers.map(num => num)
+// console.log(map);
+// const data: number[] = [1, 2, 3, 4]
+// const reduce = data.reduce((acc, num) => acc + num , 1)
+// console.log(reduce);
+let list = [];
+function get(callBack) {
+    console.log("first Time");
+    setTimeout(() => {
+        list = [
+            {
+                id: 1,
+                num: "hamza",
+            }
+        ];
+        callBack();
+    }, 2000);
+}
+get(() => {
+    console.log("second Time");
+    console.log(list);
 });
